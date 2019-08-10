@@ -3,53 +3,76 @@
  */
 package com.dbs.rest.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @author Srikanth
  *
  */
 @Entity
+@Table(name = "queue_msg")
+//@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class QueueMessage {
-	
-	private int queueId;
-	private String message;
-	private int messageId;
-	/**
-	 * @return the queueId
-	 */
-	public int getQueueId() {
-		return queueId;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int msg_id;
+
+	@Column(name = "message")
+	private int message;
+
+	@Column(name = "queue_id")
+	private String queue_id;
+
+	@Column(name = "creation_date")
+	private String creationDate;
+
+//	@Column(name = "queue_id")
+//	private String queueId;
+
+	public int getMsg_id() {
+		return msg_id;
 	}
-	/**
-	 * @param queueId the queueId to set
-	 */
-	public void setQueueId(int queueId) {
-		this.queueId = queueId;
+
+	public void setMsg_id(int msg_id) {
+		this.msg_id = msg_id;
 	}
-	/**
-	 * @return the message
-	 */
-	public String getMessage() {
+
+	public int getMessage() {
 		return message;
 	}
-	/**
-	 * @param message the message to set
-	 */
-	public void setMessage(String message) {
+
+	public void setMessage(int message) {
 		this.message = message;
 	}
-	/**
-	 * @return the messageId
-	 */
-	public int getMessageId() {
-		return messageId;
+
+	public String getQueue_id() {
+		return queue_id;
 	}
-	/**
-	 * @param messageId the messageId to set
-	 */
-	public void setMessageId(int messageId) {
-		this.messageId = messageId;
+
+	public void setQueue_id(String queue_id) {
+		this.queue_id = queue_id;
 	}
+
+	public String getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(String creationDate) {
+		this.creationDate = creationDate;
+	}
+
+//	public String getQueueId() {
+//		return queueId;
+//	}
+//
+//	public void setQueueId(String queueId) {
+//		this.queueId = queueId;
+//	}
 
 }
