@@ -3,13 +3,11 @@
  */
 package com.dbs.rest.dto;
 
-import javax.persistence.Entity;
-
 /**
  * @author Srikanth
  *
  */
-@Entity
+
 public class QueueMessage {
 	
 	private int queueId;
