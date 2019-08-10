@@ -4,16 +4,23 @@
 package com.dbs.rest.dto;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @author Srikanth
  *
  */
 @Entity
+@Table(name = "queue_msg")
 public class QueueMessage {
 	
+	@Id
+	@GeneratedValue
 	private int queueId;
 	private String message;
+	@GeneratedValue
 	private int messageId;
 	/**
 	 * @return the queueId

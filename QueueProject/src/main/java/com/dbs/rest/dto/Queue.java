@@ -5,17 +5,25 @@ package com.dbs.rest.dto;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * @author Srikanth 
  *
  */
 @Entity
+@Table(name = "queue")
 public class Queue {
-	
+	@Id
+	@GeneratedValue
 	private int id;
 	private String name;
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<QueueMessage> queueMessage;
 	
 	/**
