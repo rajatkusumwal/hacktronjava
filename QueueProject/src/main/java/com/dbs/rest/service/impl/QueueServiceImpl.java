@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.dbs.rest.service;
+package com.dbs.rest.service.impl;
 
 import org.springframework.stereotype.Component;
 
